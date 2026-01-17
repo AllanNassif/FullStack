@@ -2,21 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <!-- 
         Purpose: Defines the character encoding for the HTML document.
         Why it matters: UTF-8 is a universal encoding that supports almost all characters from every language. Without this, characters like é, ü, or emojis might not display correctly.
         Example issue if missing: “Café” could appear as CafÃ©.
     -->
+    <meta charset="UTF-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <!--
         Purpose: Ensures that Internet Explorer uses the latest rendering engine available (Edge mode) instead of older compatibility modes.
         Why it matters: Older versions of IE could render your page incorrectly if they defaulted to older standards.
         Effect: Keeps IE from using legacy quirks mode. Modern browsers ignore this meta tag.
     -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--
         Purpose: Controls how your webpage is displayed on mobile devices.
         Breakdown of attributes:
@@ -24,15 +23,16 @@
         - initial-scale=1.0: Sets the initial zoom level to 100%.
         Why it matters: Without this, mobile browsers may zoom out your page, making it tiny and unreadable. This is essential for responsive design.
     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Store Catalog</title>
     <!--
         Purpose: Sets the title of the web page.
         Where it appears: In the browser tab, bookmarks, and search engine results.
         Why it matters: Helps users identify your page and improves SEO (Search Engine Optimization).
     -->
+    <title>Store Catalog</title>
+    
 
-    <link rel="stylesheet" href="styles.css">
     <!--
     Purpose: Links an external CSS file to your HTML.
     Attributes:
@@ -40,8 +40,8 @@
     - href="styles.css" → path to your CSS file.
     Why it matters: Without it, your HTML will appear unstyled, just plain text.
     -->
-
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    
     <!--
     Purpose: Includes an external JavaScript file (script.js) in your page.
     
@@ -53,23 +53,26 @@
     - defer (DOM-dependent scripts): Downloads the script while parsing, but waits to execute it until after the HTML is fully parsed.
         Recommended for most scripts that manipulate the DOM or depend on other scripts.
         Maintains the order of multiple scripts (important if one depends on another).
-    -->
 
-    <meta name="description" content="Browse our store catalog for amazing products and deals.">
+    type="module": Indicates that the script is a JavaScript module, allowing the use of import/export statements.
+    If a file uses import or export, it must be declared as a module.
+    -->
+    <script defer type="module" src="script.js"></script>
+    
     <!--
     Purpose: Provides a brief summary of the webpage's content.
     Why it matters: Search engines use this description in search results, which can influence click-through rates.
     Example: A well-written description can attract more visitors to your site.
     -->
-
-    <meta name="keywords" content="store, catalog, products, shopping">
+    <meta name="description" content="Browse our store catalog for amazing products and deals.">
+    
     <!--
     Purpose: Lists relevant keywords for the webpage.
     Why it matters: Although less influential than before, some search engines still consider keywords for indexing.
     Example: Including relevant keywords can help improve your page's visibility in search results.
     -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="keywords" content="store, catalog, products, shopping">
+    
     <!--
     Purpose: Imports the Roboto font from Google Fonts.
     Why it matters: Using web fonts can enhance the visual appeal of your website and ensure consistent typography across different devices and browsers.
@@ -78,17 +81,11 @@
     Often slightly faster because it loads in parallel with other resources.
     Useful if multiple CSS files will use the font—you only need to load it once.
     -->
-
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
     <!-- Additional Important and must have tags -->
 
     <!-- Open Graph Meta Tags
-    <meta property="og:title" content="Store Catalog">
-    <meta property="og:description" content="Check out our amazing products!">
-    <meta property="og:image" content="preview.jpg">
-    <meta property="og:url" content="https://yourstore.com">
-
     Purpose: Open Graph meta tags enhance how your webpage appears when shared on social media platforms.
     Breakdown of attributes:
     - og:title: The title of your page.
@@ -96,15 +93,16 @@
     - og:image: A URL to an image that represents your content.
     - og:url: The canonical URL of your page.
     Why it matters: Proper Open Graph tags can improve engagement and click-through rates when your content is shared on social media.
+
+    syntax example:
+    <meta property="og:title" content="Store Catalog">
+    <meta property="og:description" content="Check out our amazing products!">
+    <meta property="og:image" content="preview.jpg">
+    <meta property="og:url" content="https://yourstore.com">
     -->
 
 
     <!-- Twitter Card Meta Tags
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Store Catalog">
-    <meta name="twitter:description" content="Check out our amazing products!">
-    <meta name="twitter:image" content="preview.jpg">
-
     Purpose: Twitter Card meta tags optimize how your webpage appears when shared on Twitter.
     Breakdown of attributes:
     - twitter:card: Specifies the type of card to display (e.g., summary, summary_large_image).
@@ -112,28 +110,35 @@
     - twitter:description: A brief description of your page.
     - twitter:image: A URL to an image that represents your content.
     Why it matters: Proper Twitter Card tags can enhance the appearance of your tweets and increase engagement when your content is shared on Twitter.
+
+    syntax example:
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Store Catalog">
+    <meta name="twitter:description" content="Check out our amazing products!">
+    <meta name="twitter:image" content="preview.jpg">
     -->
 
 
     <!-- Favicon Tag
-    <link rel="icon" type="image/png" href="favicon.png">
-
     Purpose: Sets the favicon for your website.
     Attributes:
     - rel="icon" → indicates this link is for the favicon.
     - type="image/png" → specifies the image format.
     - href="favicon.png" → path to your favicon file.
     Why it matters: Favicons help users identify your site in browser tabs and bookmarks.
+
+    syntax example:
+    <link rel="icon" type="image/png" href="favicon.png">
     -->
     
     <!-- Additional tags -->
      
-    <meta name="author" content="Your Name">
     <!--
     Purpose: Specifies the author of the webpage.
     Why it matters: Useful for attribution and can be important for professional or academic websites.
     Example: Helps users and search engines identify who created the content.
     -->
+    <meta name="author" content="Your Name">
 
 </head>
 <body>
@@ -152,7 +157,7 @@
     -->
     <main class="catalog">
         <h1>Store Catalog</h1>
-        <div class="product-grid"></div>
+        <div id="product-grid"></div>
     </main>
 
 
