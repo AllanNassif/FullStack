@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="checkout-styles.css">
+    <script type="module" defer src="thank-you-script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Thank You for Your Purchase!</h1>
+    </header>
+    
+    <main id="thank-you-container">
+        <div class="thank-you-content">
+            <div class="checkmark-container">
+                <!-- SVG (Scalable Vector Graphics) 
+                    - a way to create graphics using code instead of pixels. Unlike regular images (jpg, png), SVGs can scale to any size without losing quality.
+                    - viewBox="0 0 52 52": This sets up a coordinate system for the SVG. It means the SVG canvas is 52 units wide and 52 units tall.
+                    - Think of it as a 52×52 canvas where we can draw shapes
+                -->
+                <svg class="checkmark" viewBox="0 0 52 52">
+
+                    <!-- circle  element draws a circle
+                        - cx and cy attributes define the center of the circle (here at 26,26 which is the center of the 52x52 viewBox)
+                        - r attribute defines the radius of the circle (25 units)
+                        - fill="none" means the circle has no fill color, only an outline (stroke) 
+                    -->
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"></circle>
+
+                    <!-- path element draws the checkmark shape
+                        - d attribute contains a series of commands and coordinates that define the shape of the checkmark
+                        - M14.1 27.2: Move to the starting point (14.1, 27.2)
+                        - l7.1 7.2: Draw a line (l) from the current position to a new position by adding (7.1, 7.2) to the current coordinates (7.1 to the right and 7.2 down)
+                        - 16.7-16.6: draw another line 16.7 pixels right, 16.6 pixels up\
+                        - positive y is down, negative y is up, positive x is right, negative x is left
+                    -->
+                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.6"></path>
+                </svg>
+            </div>
+            
+            <p class="thank-you-message">Your order has been confirmed!</p>
+            
+            <div id="product-details" class="product-details">
+                <img id="product-image" src="" alt="Product image" class="product-image">
+                <h2 id="product-name"></h2>
+                <p id="product-description"></p>
+                <p id="product-price" class="product-price"></p>
+            </div>
+            
+            <div class="actions">
+                <a href="../Store_Catalog/store-catalog.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script>. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

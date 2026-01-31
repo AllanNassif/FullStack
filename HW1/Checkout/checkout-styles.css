@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #F9FAFB;
+    color: #111827;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #111827;
+}
+
+#checkout-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#total-price {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+}
+
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.form-group input {
+    padding: 12px 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+#confirm-button {
+    margin-top: 12px;
+    padding: 14px 24px;
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#confirm-button:hover {
+    background-color: #2563EB;
+}
+
+#confirm-button:active {
+    transform: translateY(1px);
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+/* Thank You Page Styles */
+#thank-you-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.checkmark-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    animation: scaleIn 0.6s ease-in-out; /* applies the scaleIn animation over 0.6s. ease-in-out for smoothness - starts slow, speeds up, then slows down at the end */
+}
+
+/*
+    stroke = the outline color (like a pen drawing the circle)
+
+*/
+.checkmark-circle {
+    stroke: #10B981; /* Green outline color */
+    stroke-width: 2; /* 2px thick line */
+    stroke-linecap: round; /* Rounded ends */
+    animation: fillGreen 0.6s ease-in-out forwards; /* forwards = keeps the final state after animation finishes */
+}
+
+.checkmark-check {
+    stroke: #10B981;
+    stroke-width: 3;
+    stroke-linecap: round; /* Rounded ends */
+    stroke-linejoin: round; /* Rounded corners where lines meet */
+    animation: drawCheck 0.6s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0); /* start small */
+        opacity: 0; /* start transparent */
+    }
+    to {
+        transform: scale(1); /* end at normal size */
+        opacity: 1; /* end fully visible */
+    }
+}
+
+/**
+    The inside of the circle gradually fills with a subtle green tint.
+*/
+@keyframes fillGreen {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: rgba(16, 185, 129, 0.1);
+    }
+}
+
+
+/**
+    The checkmark is drawn from start to finish.
+    stroke-dasharray = length of the dash
+    stroke-dashoffset = how much of the dash is hidden
+
+    Think of the checkmark path as a rope that's 48 pixels long:
+
+    stroke-dasharray: 48 = "Make the visible part 48px, then a gap"
+    stroke-dashoffset: 48 = "Shift everything 48px forward"
+    Start state: The 48px visible line is shifted completely out of view
+
+    End state: No shift, so the full 48px line is visible
+
+    Effect: The checkmark appears to be drawn from left to right, like someone is drawing it with a pen!
+*/
+@keyframes drawCheck {
+    from {
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+    }
+    to {
+        stroke-dasharray: 48;
+        stroke-dashoffset: 0;
+    }
+}
+
+.thank-you-message {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.product-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product-details h2 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin: 0;
+}
+
+.product-details p {
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #3B82F6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563EB;
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}

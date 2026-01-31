@@ -40,7 +40,7 @@
     - href="styles.css" → path to your CSS file.
     Why it matters: Without it, your HTML will appear unstyled, just plain text.
     -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="store-catalog-styles.css">
     
     <!--
     Purpose: Includes an external JavaScript file (script.js) in your page.
@@ -57,7 +57,7 @@
     type="module": Indicates that the script is a JavaScript module, allowing the use of import/export statements.
     If a file uses import or export, it must be declared as a module.
     -->
-    <script defer type="module" src="script.js"></script>
+    <script defer type="module" src="store-catalog-script.js"></script>
     
     <!--
     Purpose: Provides a brief summary of the webpage's content.
@@ -143,6 +143,19 @@
 </head>
 <body>
 
+    <header>
+        <!-- Navigation menu for the website and logo
+        <img src="logo.png" alt="Store Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store-catalog.html">Catalog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        -->
+    </header>
+
     <!-- Main content of the page
     Why we use it
     - Accessibility → screen readers can jump directly to main content
@@ -156,12 +169,24 @@
         - navigation
     -->
     <main class="catalog">
-        <h1>Store Catalog</h1>
+        <h1 id="title">Store Catalog</h1>
         <div id="product-grid"></div>
     </main>
 
+    <!-- Footer section:
+    Purpose: Provides consistent information at the bottom of each page.
+    Common elements:
+        - copyright information
+        - links to privacy policy or terms of service
+        - contact information
+    Why it matters:
+        - User Experience → users expect to find certain information in the footer
+        - Consistency → maintains a uniform look across all pages
+    -->
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear());</script>. All rights reserved.</p>
+    </footer>
 
 </body>
-
 
 </html>
